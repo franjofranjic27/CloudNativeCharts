@@ -1,0 +1,56 @@
+kafkaBootstrapServer: "bitbuddy-infrastructure-kafka:9092"
+
+kafka:
+  enabled: false
+  replicaCount: 1
+  listeners:
+    client:
+      protocol: PLAINTEXT
+
+  advertisedListeners:
+    client:
+      - name: PLAINTEXT
+        host: bitbuddy-kafka
+        port: 9092
+
+prometheus-stack:
+  enabled: false
+  grafana:
+    adminPassword: "admin"
+    service:
+      type: NodePort
+
+loki:
+  enabled: false
+  grafana:
+    enabled: false # wir nutzen Grafana aus Prometheus-Stack
+  promtail:
+    enabled: false
+
+sonarqube:
+  enabled: false
+  service:
+    type: NodePort
+  postgresql:
+    enabled: false
+
+keycloak:
+  enabled: false
+  auth:
+    adminUser: admin
+    adminPassword: admin
+
+jaeger:
+  enabled: false
+  provisionDataStore:
+    cassandra: false
+  storage:
+    type: memory
+
+argocd:
+  enabled: false
+  server:
+    service:
+      type: ClusterIP
+    extraArgs:
+      - --insecure

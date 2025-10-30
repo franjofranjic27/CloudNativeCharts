@@ -1,0 +1,35 @@
+apiVersion: v2
+name: cloud-native-chart
+description: A Helm chart for deploying Infrastructure to k8s
+type: application
+version: 0.1.0
+appVersion: "1.0.0-SNAPSHOT"
+icon: "https://github.com/franjofranjic27/BitBuddy/tree/main/helm/Helm.svg"
+dependencies:
+  - name: kafka
+    version: 26.2.0
+    repository: https://charts.bitnami.com/bitnami
+  # Grafana Loki Stack (inkl. Promtail, Grafana optional)
+  - name: loki-stack
+    version: 2.9.11
+    alias: loki
+    condition: loki.enabled
+    repository: https://grafana.github.io/helm-charts
+  # SonarQube Community Edition
+  - name: sonarqube
+    version: 10.5.0
+    condition: sonarqube.enabled
+    repository: https://SonarSource.github.io/helm-chart-sonarqube
+  - name: keycloak
+    version: 24.3.0
+    repository: https://charts.bitnami.com/bitnami
+    condition: keycloak.enabled
+  - name: jaeger
+    version: 3.0.9
+    repository: https://jaegertracing.github.io/helm-charts
+    condition: jaeger.enabled
+  - name: argo-cd
+    alias: argocd
+    version: 7.3.4
+    repository: https://argoproj.github.io/argo-helm
+    condition: argocd.enabled

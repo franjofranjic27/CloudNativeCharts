@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: bitbuddy-dev
+data:
+  KAFKA_BOOTSTRAP_SERVERS: {{ .Values.kafkaBootstrapServer | quote }}

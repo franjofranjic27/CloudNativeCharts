@@ -1,0 +1,30 @@
+dependencies:
+- name: kafka
+  repository: https://charts.bitnami.com/bitnami
+  version: 26.2.0
+- name: loki-stack
+  repository: https://grafana.github.io/helm-charts
+  version: 2.9.11
+- name: sonarqube
+  repository: https://SonarSource.github.io/helm-chart-sonarqube
+  version: 10.5.0+2748
+- name: keycloak
+  repository: https://charts.bitnami.com/bitnami
+  version: 24.3.0
+- name: jaeger
+  repository: https://jaegertracing.github.io/helm-charts
+  version: 3.0.9
+- name: argo-cd
+  repository: https://argoproj.github.io/argo-helm
+  version: 7.3.4
+- name: generic-chart
+  repository: oci://registry-1.docker.io/franjofranjic
+  version: 0.1.0
+- name: generic-chart
+  repository: oci://registry-1.docker.io/franjofranjic
+  version: 0.1.0
+- name: generic-chart
+  repository: oci://registry-1.docker.io/franjofranjic
+  version: 0.1.0
+digest: sha256:502b84b762d49ed47db16168f74e715dd9e79eb85588d75e19320f7682e759ac
+generated: "2025-10-12T20:51:05.73621+02:00"
