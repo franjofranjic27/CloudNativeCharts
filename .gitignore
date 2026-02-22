@@ -1,0 +1,23 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Helm
+*.tgz.lock
+helm-debug.yaml
+
+# Local value overrides (never commit secrets)
+values.local.yml
+values.local.yaml
+values.secret.yml
+values.secret.yaml
+*-secrets.yml
+*-secrets.yaml
+
+# Rendered output
+rendered/
+output/
